@@ -1,0 +1,28 @@
+{
+    "UNWIRED_RANGE": {
+        "inherits": ["FAMILY_STM32"],
+        "core": "Cortex-M3",
+        "default_toolchain": "ARM",
+        "extra_labels_add": ["STM32L1", "STM32L151CC"],
+        "config": {
+            "hse_value": {
+                "value": "24000000",
+                "macro_name": "HSE_VALUE"
+            }
+        },
+        "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
+        "device_has_add": [
+            "ANALOGOUT",
+            "SERIAL_ASYNCH",
+            "FLASH",
+            "MPU"
+        ],
+        "device_has_remove": [
+            "SERIAL_FC"
+        ],
+        "release_versions": ["5"],
+        "device_name": "STM32L151CC",
+        "detect_code": ["0350"],
+        "bootloader_supported": true
+    }
+}
