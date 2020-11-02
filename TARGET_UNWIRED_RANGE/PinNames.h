@@ -142,21 +142,32 @@ typedef enum {
     USER_BUTTON = PB_1,
     // Standardized button names
     BUTTON1     = USER_BUTTON,
+    // Standardized serial interface
     SERIAL_TX   = STDIO_UART_TX,
     SERIAL_RX   = STDIO_UART_RX,
     USBTX       = STDIO_UART_TX,
     USBRX       = STDIO_UART_RX,
+    // Standardized I2C interface
     I2C1_SCL    = PB_8,
     I2C1_SDA    = PB_9,
     I2C2_SCL    = PB_10,
     I2C2_SDA    = PB_11,
     I2C_SCL     = I2C2_SCL,
     I2C_SDA     = I2C2_SDA,
+    // Standardized SPI interface
+    SPI1_MOSI   = PA_7,
+    SPI1_MISO   = PA_6,
+    SPI1_SCK    = PA_5,
+    SPI1_CS     = PA_4,
+    SPI2_MOSI   = PB_15,
+    SPI2_MISO   = PB_14,
+    SPI2_SCK    = PB_13,
+    SPI2_CS     = PB_12,
+    SPI_MOSI    = SPI1_MOSI,
+    SPI_MISO    = SPI1_MISO,
+    SPI_SCK     = SPI1_SCK,
+    SPI_CS      = SPI1_CS,
 
-    SPI_MOSI    = PA_7,
-    SPI_MISO    = PA_6,
-    SPI_SCK     = PA_5,
-    SPI_CS      = PB_6, // NC? RIOT - UNDEF
     PWM_OUT     = PA_5, // RIOT UNWD: PA_5, PA_1, PA_2, PA_3, PA_6, PA_7, PB_8, PB_9
 
     /**** OSCILLATOR pins ****/
