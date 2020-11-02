@@ -22,7 +22,6 @@
         ],
         "release_versions": ["5"],
         "device_name": "STM32L151CC",
-        "detect_code": ["0350"],
         "bootloader_supported": true
     }
 }
