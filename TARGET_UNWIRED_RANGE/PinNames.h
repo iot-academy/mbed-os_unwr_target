@@ -141,7 +141,7 @@ typedef enum {
     LED1        = PB_0,
     USER_BUTTON = PB_1,
     // Standardized button names
-    BUTTON1 = USER_BUTTON,
+    BUTTON1     = USER_BUTTON,
     SERIAL_TX   = STDIO_UART_TX,
     SERIAL_RX   = STDIO_UART_RX,
     USBTX       = STDIO_UART_TX,
@@ -160,17 +160,17 @@ typedef enum {
     PWM_OUT     = PA_5, // RIOT UNWD: PA_5, PA_1, PA_2, PA_3, PA_6, PA_7, PB_8, PB_9
 
     /**** OSCILLATOR pins ****/
-    RCC_OSC32_IN = PC_14,
+    RCC_OSC32_IN  = PC_14,
     RCC_OSC32_OUT = PC_15,
-    RCC_OSC_IN = PH_0,
-    RCC_OSC_OUT = PH_1,
+    RCC_OSC_IN    = PH_0,
+    RCC_OSC_OUT   = PH_1,
 
     /**** DEBUG pins ****/
-    SYS_JTCK_SWCLK = PA_14,
-    SYS_JTDI = PA_15,
+    SYS_JTCK_SWCLK    = PA_14,
+    SYS_JTDI          = PA_15,
     SYS_JTDO_TRACESWO = PB_3,
-    SYS_JTMS_SWDIO = PA_13,
-    SYS_JTRST = PB_4,
+    SYS_JTMS_SWDIO    = PA_13,
+    SYS_JTRST         = PB_4,
 //  SYS_PVD_IN = PB_7,
 //  SYS_V_REF_OUT = PB_0,
 //  SYS_V_REF_OUT_ALT0 = PB_1,
@@ -178,7 +178,7 @@ typedef enum {
 //  SYS_WKUP2 = PC_13,
 
     /** UNWD GPIO Ports */
-    UNWD_GPIO_1 = PB_1,  // Save button
+    UNWD_GPIO_1 = PB_1,  // Safe button
     UNWD_GPIO_2 = PA_10, // STDIO_RX
     UNWD_GPIO_3 = PA_9,  // STDIO_TX
     UNWD_GPIO_4 = PA_4,  // (?) ADC ch. 4
