@@ -1,6 +1,6 @@
 {
     "UNWIRED_RANGE": {
-        "inherits": ["FAMILY_STM32"],
+        "inherits": ["MCU_STM32L1"],
         "core": "Cortex-M3",
         "default_toolchain": "ARM",
         "extra_labels_add": ["STM32L1", "STM32L151CC"],
