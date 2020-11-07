@@ -209,6 +209,19 @@ typedef enum {
     UNWD_GPIO_25 = PA_2, // UART TX, ADC ch. 2, PWM ch. 0-1
     UNWD_GPIO_24 = PA_1, // (?) ADC ch. 1, PWM ch. 0-0
 
+    /* LoRa */
+    LORA_MOSI   = SPI2_MOSI,
+    LORA_MISO   = SPI2_MISO,
+    LORA_SCK    = SPI2_SCK,
+    LORA_NSS    = SPI2_CS,
+    LORA_RESET  = PA_8,
+    LORA_DIO0   = PA_12,
+    LORA_DIO1   = PC_13,
+    LORA_DIO2   = PA_0,
+    LORA_DIO3   = PB_6, /* CadDone */
+    LORA_DIO4   = PB_7, /* CadDetect */
+    ANT_SWITCH  = PA_11, /* LORA_RFSWITCH - RF on/off switching pin*/
+
     // Not connected
     NC = (int)0xFFFFFFFF
 } PinName;
