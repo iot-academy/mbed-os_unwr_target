@@ -1,9 +1,12 @@
 {
     "UNWIRED_RANGE": {
-        "inherits": ["MCU_STM32L1"],
-        "core": "Cortex-M3",
+        "inherits": [
+            "MCU_STM32L151xC"
+        ],
         "default_toolchain": "ARM",
-        "extra_labels_add": ["STM32L1", "STM32L151CC"],
+        "extra_labels_add": [
+            "STM32L151CC"
+        ],
         "config": {
             "hse_value": {
                 "value": "24000000",
@@ -20,8 +23,6 @@
         "device_has_remove": [
             "SERIAL_FC"
         ],
-        "release_versions": ["5"],
-        "device_name": "STM32L151CC",
-        "bootloader_supported": true
+        "device_name": "STM32L151CCTx"
     }
 }

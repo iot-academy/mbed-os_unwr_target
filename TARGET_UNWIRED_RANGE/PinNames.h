@@ -126,15 +126,15 @@ typedef enum {
     ADC_VREF = 0xF1,
 
     // STDIO for console print
-#ifdef MBED_CONF_TARGET_STDIO_UART_TX
-    STDIO_UART_TX = MBED_CONF_TARGET_STDIO_UART_TX,
+#if defined(MBED_CONF_TARGET_STDIO_UART_TX)
+#define CONSOLE_TX MBED_CONF_TARGET_STDIO_UART_TX
 #else
-    STDIO_UART_TX = PA_9,
+#define CONSOLE_TX PA_9
 #endif
-#ifdef MBED_CONF_TARGET_STDIO_UART_RX
-    STDIO_UART_RX = MBED_CONF_TARGET_STDIO_UART_RX,
+#if defined(MBED_CONF_TARGET_STDIO_UART_RX)
+#define CONSOLE_RX MBED_CONF_TARGET_STDIO_UART_RX
 #else
-    STDIO_UART_RX = PA_10,
+#define CONSOLE_RX PA_10
 #endif
 
     // Generic signals namings
@@ -143,10 +143,10 @@ typedef enum {
     // Standardized button names
     BUTTON1     = USER_BUTTON,
     // Standardized serial interface
-    SERIAL_TX   = STDIO_UART_TX,
-    SERIAL_RX   = STDIO_UART_RX,
-    USBTX       = STDIO_UART_TX,
-    USBRX       = STDIO_UART_RX,
+    SERIAL_TX   = CONSOLE_TX,
+    SERIAL_RX   = CONSOLE_RX,
+//    USBTX       = CONSOLE_TX,
+//    USBRX       = CONSOLE_RX,
     // Standardized I2C interface
     I2C1_SCL    = PB_8,
     I2C1_SDA    = PB_9,
