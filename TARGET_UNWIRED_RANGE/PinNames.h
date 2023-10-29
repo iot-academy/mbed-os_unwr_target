@@ -35,7 +35,7 @@
 #include "PinNamesTypes.h"
 #include "mbed_version.h"
 
-#if !defined(MBED_MAJOR_VERSION) ||  MBED_MAJOR_VERSION < 6
+#if !defined(MBED_MAJOR_VERSION) || MBED_MAJOR_VERSION < 6
 #error "This target is for use with Mbed 6.x!"
 #endif
 
@@ -235,8 +235,8 @@ typedef enum {
     LORA_DIO0   = PA_12,
     LORA_DIO1   = PC_13,
     LORA_DIO2   = PA_0,
-    LORA_DIO3   = PB_6, /* CadDone */
-    LORA_DIO4   = PB_7, /* CadDetect */
+    LORA_DIO3   = PB_6,  /* CadDone */
+    LORA_DIO4   = PB_7,  /* CadDetect */
     ANT_SWITCH  = PA_11, /* LORA_RFSWITCH - RF on/off switching pin*/
 
     // Not connected
