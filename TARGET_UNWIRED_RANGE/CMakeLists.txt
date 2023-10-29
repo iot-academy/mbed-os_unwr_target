@@ -1,6 +1,10 @@
 # Copyright (c) 2020 ARM Limited. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
+if("TARGET_UNWIRED_RANGE" IN_LIST MBED_TARGET_LABELS)
+    add_subdirectory(TARGET_UNWIRED_RANGE )
+endif()
+
 if(${MBED_TOOLCHAIN} STREQUAL "GCC_ARM")
     set(STARTUP_FILE TOOLCHAIN_GCC_ARM/startup_stm32l151xc.S)
     set(LINKER_FILE TOOLCHAIN_GCC_ARM/stm32l151xc.ld)
@@ -28,3 +32,4 @@ target_sources(mbed-unwr-range
 )
 
 target_link_libraries(mbed-unwr-range INTERFACE mbed-stm32l151xc)
+
