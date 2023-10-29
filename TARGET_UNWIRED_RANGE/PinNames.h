@@ -33,6 +33,11 @@
 
 #include "cmsis.h"
 #include "PinNamesTypes.h"
+#include "mbed_version.h"
+
+#if !defined(MBED_MAJOR_VERSION) ||  MBED_MAJOR_VERSION < 6
+#error "This target is for use with Mbed 6.x!"
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -126,15 +131,32 @@ typedef enum {
     ADC_VREF = 0xF1,
 
     // STDIO for console print
-#if defined(MBED_CONF_TARGET_STDIO_UART_TX)
-#define CONSOLE_TX MBED_CONF_TARGET_STDIO_UART_TX
+#if MBED_MINOR_VERSION < 10
+    #if defined(MBED_CONF_TARGET_STDIO_UART_TX)
+        STDIO_UART_TX = MBED_CONF_TARGET_STDIO_UART_TX,
+    #else
+        STDIO_UART_TX = PA_9,
+    #endif
+    #if defined(MBED_CONF_TARGET_STDIO_UART_RX)
+        STDIO_UART_RX = MBED_CONF_TARGET_STDIO_UART_RX,
+    #else
+        STDIO_UART_RX = PA_10,
+    #endif
+    SERIAL_TX   = STDIO_UART_TX,
+    SERIAL_RX   = STDIO_UART_RX,
+    USBTX       = STDIO_UART_TX,
+    USBRX       = STDIO_UART_RX,
 #else
-#define CONSOLE_TX PA_9
-#endif
-#if defined(MBED_CONF_TARGET_STDIO_UART_RX)
-#define CONSOLE_RX MBED_CONF_TARGET_STDIO_UART_RX
-#else
-#define CONSOLE_RX PA_10
+    #if defined(MBED_CONF_TARGET_STDIO_UART_TX)
+        CONSOLE_TX = MBED_CONF_TARGET_STDIO_UART_TX,
+    #else
+        CONSOLE_TX = PA_9,
+    #endif
+    #if defined(MBED_CONF_TARGET_STDIO_UART_RX)
+        CONSOLE_RX = MBED_CONF_TARGET_STDIO_UART_RX,
+    #else
+        CONSOLE_RX = PA_10,
+    #endif
 #endif
 
     // Generic signals namings
@@ -142,11 +164,6 @@ typedef enum {
     USER_BUTTON = PB_1,
     // Standardized button names
     BUTTON1     = USER_BUTTON,
-    // Standardized serial interface
-    SERIAL_TX   = CONSOLE_TX,
-    SERIAL_RX   = CONSOLE_RX,
-//    USBTX       = CONSOLE_TX,
-//    USBRX       = CONSOLE_RX,
     // Standardized I2C interface
     I2C1_SCL    = PB_8,
     I2C1_SDA    = PB_9,
